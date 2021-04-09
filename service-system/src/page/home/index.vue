@@ -2,7 +2,7 @@
   <div class="home">
     <Row :gutter="16">
       <Col span="3"
-        ><Button :long="true" size="large" type="success" @click="Modal = true"
+        ><Button :long="true" size="large" type="success" @click="Modal = true;status='add'"
           >登记</Button
         ></Col
       >
@@ -25,10 +25,10 @@
     <Page style="margin:10px auto;" :total="100" />
     <Modal
       v-model="Modal"
-      title="订单添加"
+      :title="`订单${status=='add'?'添加':status=='edit'?'编辑':status}`"
       class-name="modal"
       :transfer="true"
-      @on-cancel="Modal = false"
+      @on-cancel="Modal = false;status='add'"
       :mask-closable="false"
       :closable="false"
       :highlight-row="true"
@@ -113,6 +113,7 @@ export default {
   },
   data: () => ({
     Modal: false,
+    status: 'add',
     formValidate: {},
     ruleValidate: [],
     PickUpList: [
@@ -209,6 +210,7 @@ export default {
             on: {
               click: () => {
                 _this.Modal = true;
+                _this.status = 'edit';
               },
             },
           });
