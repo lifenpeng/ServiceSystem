@@ -8,6 +8,8 @@ import 'view-design/dist/styles/iview.css';
 Vue.use(VueRouter)
 Vue.use(ViewUI);
 
+window.Message = ViewUI.Message;
+
 Vue.config.productionTip = false
 
 new Vue({

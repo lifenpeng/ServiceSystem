@@ -8,12 +8,12 @@ module.exports = {
     hotOnly: false,
     proxy: {
       // 配置跨域
-      "/api": {
-        target: "https://api.apihubs.cn/", //配置开发环境跨域请求服务地址
+      "/lsf": {
+        target: "http://www.kabos.cn/", //配置开发环境跨域请求服务地址
         changeOrigin: true, //改变源
         //ws: true, //是否代理websockets
         pathRewrite: {
-          "^/api": "",
+          "^/lsf": "",
         },
       },
     },

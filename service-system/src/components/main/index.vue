@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import time from "../../common/date"
+//import time from "../../common/date"
 export default {
     name:"home",
     mounted(){
-        console.log(time.get_current_time(),time.get_custom_time(time.get_current_time()));
+        //console.log(time.get_current_time(),time.get_custom_time(time.get_current_time()));
     },
     data:()=>({
 
